@@ -15,13 +15,13 @@ class ship {
     }
 }
 
-class USS extends Ship {
+class USS extends ship {
     constructor() {
         super(20, 5, 0.7, "USS Ship");
     }
 }
 
-class Alienship extends Ship {
+class Alienship extends ship {
     constructor() {
         let h = Math.floor(Math.random() * 4) + 3;
         let f = Math.floor(Math.random() * 3) + 2;
