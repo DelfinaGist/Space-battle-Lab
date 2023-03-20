@@ -15,3 +15,32 @@ class ship {
     }
 }
 
+class USS extends Ship {
+    constructor() {
+        super(20, 5, 0.7, "USS Ship");
+    }
+}
+
+class Alienship extends Ship {
+    constructor() {
+        let h = Math.floor(Math.random() * 4) + 3;
+        let f = Math.floor(Math.random() * 3) + 2;
+        let a = Math.random() * 0.2 + 0.6;
+        super(h, f, a, "Alien Ship");
+    }
+}
+
+const alienship1 = new Alienship("Alien Ship");
+const uss1 = new USS("USS");
+
+function Round(a, b) {
+    while (a.hull >= 0 && b.hull >= 0) {
+        a.attack(b);
+        if (b.hull <= 0) {
+            console.log(`Alienship is Massacred`);
+        } else {
+            console.log(`Alienship attacks`);
+            b.attack(a);
+        }
+    }
+}
