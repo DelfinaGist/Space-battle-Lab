@@ -41,6 +41,51 @@ function Round(a, b) {
         } else {
             console.log(`Alienship attacks`);
             b.attack(a);
+            if (a.hull >= 0) {
+                console.log(`You Survive`)
+            } else {
+                console.log(`You are destroyed`);
+            }
         }
+    }
+}
+
+const allShips = [];
+allShips.push(new Alienship());
+allShips.push(new Alienship());
+allShips.push(new Alienship());
+allShips.push(new Alienship());
+allShips.push(new Alienship());
+allShips.push(new Alienship());
+Round(uss1, alienship1);
+
+console.log(allShips);
+
+while (allShips.length !=0) {
+    Round(uss1, allShips[0]);
+
+    if(uss1.hull <= 0) {
+        console.log("You lose the Game");
+        break;
+    }
+    if (allShips[0].hull <= 0) {
+        allShips.shift();
+        console.log("Ship Destroyed");
+    }
+
+    If (uss1.hull >= 0 && allShips.length === 0) {
+        console.log("You Win");
+        break;
+    }
+
+        let windowPage = window.prompt("Retreat? (Press R) Attack (Press A)");
+    if (windowPage === null) {
+        windowPage = "";
+    }
+
+    if (windowPage.toLowerCase() === "r") {
+        console.log("You retreat, Game over!");
+        break;
+    } else {
     }
 }
